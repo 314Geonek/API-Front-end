@@ -40,7 +40,7 @@ function dodaj() {
     st.name = document.getElementById('name').value;
     st.surname = document.getElementById('surname').value;
     st.avarage = document.getElementById('avarage').value;
-    fetch("http://localhost:8080/students/add", {
+    fetch("http://localhost:8080/students", {
         method: "post",
         body: JSON.stringify(st),
         headers: {"Content-type": "application/json; charset=UTF-8"}
@@ -62,9 +62,9 @@ function dodaj() {
 
 function usun() {
     var id = document.getElementById('idusun').value;
-    fetch("http://localhost:8080/students/" + id, {
+    fetch("http://localhost:8080/students", {
         method: "delete",
-        body: JSON.stringify(""),
+        body: JSON.stringify(id),
         headers: {"Content-type": "application/json; charset=UTF-8"}
     })
             //  .then(response => response.json())
